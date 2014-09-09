@@ -155,7 +155,7 @@
 								</tr>
 								<tr>
 									<td>startDate</td>
-									<td>String</td>
+									<td>dateTime</td>
 									<td>The earliest timestamp (i.e., the first line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or after (i.e., inclusive) this parameter 
 										and also satisfy the condition for endDate, are included in the output Market Data file</td>
@@ -163,7 +163,7 @@
 								</tr>
 								<tr>
 									<td>endDate</td>
-									<td>String</td>
+									<td>dateTime</td>
 									<td>The latest timestamp (i.e., the last line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or before (i.e., inclusive) this parameter and also satisfy the 
 										condition for startDate, are included in the output Market Data file</td>
@@ -171,7 +171,7 @@
 								</tr>
 								<tr>
 									<td>dataSource</td>
-									<td>String</td>
+									<td>anyURI</td>
 									<td>This is a http:// URL that points to the input Market Data file </td>
 									<td>http://adage.cse.unsw.edu.au:8080/MarketData03.csv</td>
 								</tr>
