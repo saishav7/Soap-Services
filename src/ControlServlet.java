@@ -1,11 +1,14 @@
 
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 
 /**
  * Servlet implementation class ControlServlet
@@ -25,14 +28,31 @@ public class ControlServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("homepage.html").forward(request, response);
+		
+		if(request.getParameter("currencyService") != null){
+			
+				String eventSetId = request.getParameter("eventSetId");
+				String targetCurrency = request.getParameter("targetCurrency");
+				String outputEventSetId;
+				System.out.println(eventSetId +" " + targetCurrency);
+				String[] params = new String[2];
+				params[0] = eventSetId;
+				params[1] = targetCurrency;
+				outputEventSetId = WebServiceClient.main(params);
+				getServletContext().setAttribute("outputEventSetId", outputEventSetId);
+				response.sendRedirect("/home");
+		}
+			else{
+				System.out.print("here");
+				request.getRequestDispatcher("homepage.html").forward(request, response);
+			}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	}
 
 }
