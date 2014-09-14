@@ -34,7 +34,7 @@ public class WebServiceClient {
     }
 
 
-	public static String callCurrencyConvertMarketDataOperation(CurrencyConvertServicesStub stub, String eventSetId, String targetCurrency) throws Exception {
+	private static String callCurrencyConvertMarketDataOperation(CurrencyConvertServicesStub stub, String eventSetId, String targetCurrency) throws Exception {
         // Ready the request for rdthImport operation.
         CurrenyConvertMarketDataDocument reqDoc = CurrenyConvertMarketDataDocument.Factory.newInstance();
         CurrenyConvertMarketData req = reqDoc.addNewCurrenyConvertMarketData();

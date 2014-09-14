@@ -153,7 +153,7 @@
 									<td>The security code of the financial instrument (i.e., stock). 
 										All data rows in the Market Data file having a security code that 
 										matches this parameter should be included in the output Market Data file.</td>
-									<td>WSSS</td>
+									<td>WSSS, ZXQ</td>
 								</tr>
 								<tr>
 									<td>startDate</td>
@@ -161,7 +161,7 @@
 									<td>The earliest timestamp (i.e., the first line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or after (i.e., inclusive) this parameter 
 										and also satisfy the condition for endDate, are included in the output Market Data file</td>
-									<td>2002-04-08T16:59:00.000</td>
+									<td>2002-04-08T16:59:00.000 (yyyy-MM-ddTHH:mm:ss.SSS)</td>
 								</tr>
 								<tr>
 									<td>endDate</td>
@@ -169,26 +169,26 @@
 									<td>The latest timestamp (i.e., the last line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or before (i.e., inclusive) this parameter and also satisfy the 
 										condition for startDate, are included in the output Market Data file</td>
-									<td>2002-04-09T17:48:00.000</td>
+									<td>2002-04-09T17:48:00.000 (yyyy-MM-ddTHH:mm:ss.SSS)</td>
 								</tr>
 								<tr>
 									<td>dataSource</td>
 									<td>anyURI</td>
-									<td>This is a http:// URL that points to the input Market Data file </td>
+									<td>This is a http:// URL that points to the input Market Data file. It is the location of the input file for performing the service on.</td>
 									<td>http://adage.cse.unsw.edu.au:8080/MarketData03.csv</td>
 								</tr>
 								<tr>
 									<td>eventSetId</td>
 									<td>String</td>
-									<td>An opaque "handle" or reference that refers to the output Market Data file (also called an event set: 
-										because it stores an ordered set of events)</td>
-									<td>tsb-9b7e45ad</td>
+									<td>A reference that refers to the output Market Data file (also called an event set: 
+										because it stores an ordered set of events). It is a number between 1-1000000</td>
+									<td>12345,3456678</td>
 								</tr>
 								<tr>
 									<td>targetCurrency</td>
 									<td>String</td>
 									<td>It is the currency to which the market-data file is to be converted</td>
-									<td>USD</td>
+									<td>USD,JPY,INR,AUD</td>
 								</tr>
 								</tbody>
 							</table>
@@ -210,7 +210,8 @@
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.
+						<p><a href="http://localhost:8080/axis2/services/ImportDownloadServices?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 							<div class="clear"> </div>
 							<form method="post" action="#">
 						    	<input type="text" class="textbox" value="sec" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Sec';}">
@@ -257,7 +258,8 @@
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.
+						<p style="color:#fff;"><a href="http://localhost:8080/axis2/services/SummaryMarketDataService?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<div class="clear"> </div>
 							<form method="post" action="#">
 						    	<input type="text" class="textbox" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
@@ -298,13 +300,17 @@
 						<h2>Currency Converter</h2>
 						<p>
 						This services allows customers to convert the currency of the market-data files to
-						the desired type(USD, GBP, EUR etc). Note that the default existing currency is AUD.
+						the desired type(USD, GBP, EUR etc). Note that the default currency is AUD. If the input file
+						does not have any currency prefix (e.g. USD14.45), the service will consider the prices to be in AUD.
 						The service creates a new file containing the converted currency values. An <b>eventSetId</b>
-						is returned, which is a reference to the output file.
+						is returned, which is a reference to the output file. The output file changes the currency to the target currency
+						for the columns Price, Bid Price and Ask Price respectively.
+						
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.
+						<p><a href="http://localhost:8080/axis2/services/CurrencyConvertServices?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<div class="clear"> </div>
 							<form method="get">
 						    	<input type="text" class="textbox" name="eventSetId" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
