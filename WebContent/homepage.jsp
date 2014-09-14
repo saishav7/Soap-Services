@@ -182,13 +182,60 @@
 									<td>String</td>
 									<td>A reference that refers to the output Market Data file (also called an event set: 
 										because it stores an ordered set of events). It is a number between 1-1000000</td>
-									<td>12345,3456678</td>
+									<td>12345, 3456678</td>
 								</tr>
 								<tr>
 									<td>targetCurrency</td>
 									<td>String</td>
 									<td>It is the currency to which the market-data file is to be converted</td>
-									<td>USD,JPY,INR,AUD</td>
+									<td>USD, JPY, INR, AUD</td>
+								</tr>
+								</tbody>
+							</table>
+							</div>
+						</div>
+						<div id="errorCodes" class="mfp-hide">
+							<div class="pop_up">
+							<p class="para">Following are the errors that might occour:-</p>
+							<table cellspacing="10">
+								<thead>
+								<tr>
+									<th>CODE</th>
+									<th>DESCRIPTION</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>InvalidEventSetId</td>
+									<td>The event set id entered is incorrect. This 
+										could possibly be because a file corresponding to the
+										entered eventSetId does not exist.</td>
+								</tr>
+								<tr>
+									<td>InvalidURL</td>
+									<td>The URL entered is incorrect. This 
+										could possibly be because a file corresponding to the
+										entered URL does not exist or does not contain a valid file.</td>
+								</tr>
+								<tr>
+									<td>InvalidSECCode</td>
+									<td>This error code implies that the SEC code entered does not match
+										with the SEC code provided in the data file.</td>
+								</tr>
+								<tr>
+									<td>InvalidTargetCurrency</td>
+									<td>The target currency can only be a three letter code(GPB, JPY, AUD etc)from the list of world currencies.
+										This code implies that the target currency code is not valid, hence
+										the service cannot convert values to this currency type.</td>
+								</tr>
+								<tr>
+									<td>PriceAlreadyConverted</td>
+									<td>This code implies that the prices in the data file are already in the targetted currency format.
+										Please choose another target currency, to test this service.</td>
+								</tr>
+								<tr>
+									<td>ProgramError</td>
+									<td>This error arises when there is an issue with the service such as http request errors.</td>
 								</tr>
 								</tbody>
 							</table>
@@ -212,6 +259,7 @@
 						<div class="portfolio-wrapper">	
 						<p><a href="http://localhost:8080/axis2/services/ImportDownloadServices?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
+						<p><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 							<div class="clear"> </div>
 							<form method="post" action="#">
 						    	<input type="text" class="textbox" value="sec" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Sec';}">
@@ -260,6 +308,7 @@
 						<div class="portfolio-wrapper">	
 						<p style="color:#fff;"><a href="http://localhost:8080/axis2/services/SummaryMarketDataService?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
+						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 						<div class="clear"> </div>
 							<form method="post" action="#">
 						    	<input type="text" class="textbox" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
@@ -311,6 +360,7 @@
 						<div class="portfolio-wrapper">	
 						<p><a href="http://localhost:8080/axis2/services/CurrencyConvertServices?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
+						<p><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 						<div class="clear"> </div>
 							<form method="get">
 						    	<input type="text" class="textbox" name="eventSetId" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
