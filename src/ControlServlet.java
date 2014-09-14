@@ -39,12 +39,12 @@ public class ControlServlet extends HttpServlet {
 				params[0] = eventSetId;
 				params[1] = targetCurrency;
 				outputEventSetId = WebServiceClient.main(params);
+				System.out.println(outputEventSetId);
 				getServletContext().setAttribute("outputEventSetId", outputEventSetId);
-				response.sendRedirect("/home");
+				response.sendRedirect("../SoapServices/home#currency");
 		}
 			else{
-				System.out.print("here");
-				request.getRequestDispatcher("homepage.html").forward(request, response);
+				request.getRequestDispatcher("homepage.jsp").forward(request, response);
 			}
 	}
 
