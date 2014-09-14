@@ -2,6 +2,10 @@
     <wb-module deploy-name="SoapServices">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/lib"/>
+        <dependent-module archiveName="CurrencyConvertServices-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SoapServices/build/lib/CurrencyConvertServices-test-client.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="SoapServices"/>
         <property name="java-output-path" value="/SoapServices/build/classes"/>
     </wb-module>
