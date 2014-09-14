@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import au.edu.unsw.sltf.services.SummaryMarketDataResponseDocument.SummaryMarketDataResponse;
+
 
 
 /**
@@ -53,7 +55,32 @@ public class ControlServlet extends HttpServlet {
 			System.out.println(outputdataSourceURL);
 			getServletContext().setAttribute("outputDataSourceURL", outputdataSourceURL);
 			response.sendRedirect("../SoapServices/home#import");
-	}
+			
+		}	else if(request.getParameter("importService") != null){
+			String[] downloadRequest = new String[5];
+			downloadRequest[0] = "import";
+			downloadRequest[1] = request.getParameter("sec");
+			downloadRequest[2] = request.getParameter("startDate");
+			downloadRequest[3] = request.getParameter("endDate");
+			downloadRequest[4] = request.getParameter("dataSourceURL");
+			
+			String outputImportEventSetId = ImportDownloadWebServiceClient.main(downloadRequest);
+			getServletContext().setAttribute("outputImportEventSetId", outputImportEventSetId);
+			response.sendRedirect("../SoapServices/home#import");
+			
+		}	else if(request.getParameter("summaryService") != null){
+			String[] downloadRequest = new String[1];
+			downloadRequest[0] = request.getParameter("summaryEventSetId");
+			SummaryMarketDataResponse res = SummaryDataWebServiceClient.main(downloadRequest);
+			getServletContext().setAttribute("outputSummaryEventSetId", res.getEventSetId());
+			getServletContext().setAttribute("outputSummaryStartDate", res.getStartDate());
+			getServletContext().setAttribute("outputSummaryEndDate", res.getEndDate());
+			getServletContext().setAttribute("outputSummaryMarketType", res.getMarketType());
+			getServletContext().setAttribute("outputSummaryCurrencyCode", res.getCurrencyCode());
+			getServletContext().setAttribute("outputSummaryFileSize", res.getFileSize());
+			response.sendRedirect("../SoapServices/home#summary");
+		}
+		
 			else{
 				request.getRequestDispatcher("homepage.jsp").forward(request, response);
 			}

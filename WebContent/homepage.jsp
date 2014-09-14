@@ -261,17 +261,18 @@
 						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<p><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 							<div class="clear"> </div>
-							<form method="post" action="#">
-						    	<input type="text" class="textbox" value="sec" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Sec';}">
-							   	<input type="text" class="textbox" value="startDate" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Start Date';}">
-							   	<input type="text" class="textbox" value="endDate" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter End Date';}">
-							   	<input type="text" class="textbox" value="dataSourceURL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Data Source URL';}">
+							<form method="get">
+						    	<input type="text" class="textbox" name="sec" value="sec" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Sec';}">
+							   	<input type="text" class="textbox" name="startDate" value="startDate" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Start Date';}">
+							   	<input type="text" class="textbox" name="endDate" value="endDate" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter End Date';}">
+							   	<input type="text" class="textbox" name="dataSourceURL" value="dataSourceURL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Data Source URL';}">
+							   	<input type="hidden" name="importService" value="true">
 							   	<input type="submit" class="" value="Submit">
 							</form>
 						</div>
 						<div class="contact-form">
 							<h3>OUTPUT </h3>
-							<h3>eventSetId: </h3>
+							<h3>eventSetId: ${outputImportEventSetId}</h3>
 						</div>
 						<div class="contact-form">
 							<form method="get">
@@ -317,8 +318,8 @@
 						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 						<div class="clear"> </div>
-							<form method="post" action="#">
-						    	<input type="text" class="textbox" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
+							<form method="get">
+						    	<input type="text" class="textbox" name="summaryEventSetId" value="summaryEventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
 							   	<input type="hidden" name="summaryService" value="true">
 							   	<input type="submit" class="" value="Submit">
 							   	<div class="clear"> </div>
@@ -327,12 +328,12 @@
 						<div class="contact-form">
 						<div class="clear"> </div>
 							<h3>OUTPUT </h3>
-							<h3 style="color:#fff;">eventSetId: </h3>
-							<h3 style="color:#fff;">startDate: </h3>
-							<h3 style="color:#fff;">endDate: </h3>
-							<h3 style="color:#fff;">marketType: </h3>
-							<h3 style="color:#fff;">currencyCode: </h3>
-							<h3 style="color:#fff;">fileSize: </h3>
+							<h3 style="color:#fff;">eventSetId: ${outputSummaryEventSetId} </h3>
+							<h3 style="color:#fff;">startDate: ${outputSummaryStartDate} </h3>
+							<h3 style="color:#fff;">endDate: ${outputSummaryEndDate}</h3>
+							<h3 style="color:#fff;">marketType: ${outputSummaryMarketType}</h3>
+							<h3 style="color:#fff;">currencyCode: ${outputSummaryCurrencyCode}</h3>
+							<h3 style="color:#fff;">fileSize: ${outputSummaryFileSize} bytes</h3>
 							
 						</div>
 	</div><!-- container -->

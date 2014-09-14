@@ -9,6 +9,9 @@
         <dependent-module archiveName="ImportDownloadServices-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ImportDataClient/build/lib/ImportDownloadServices-test-client.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="SummaryMarketDataService-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SummaryDataClient/build/lib/SummaryMarketDataService-test-client.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="SoapServices"/>
         <property name="java-output-path" value="/SoapServices/build/classes"/>
     </wb-module>

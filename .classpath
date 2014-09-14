@@ -349,5 +349,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/ImportDataClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SummaryDataClient"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
