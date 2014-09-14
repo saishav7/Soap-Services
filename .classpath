@@ -8,7 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CurrencyConvertClient"/>
 	<classpathentry kind="lib" path="/apps/axis2-1.6.2/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="/apps/axis2-1.6.2/lib/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="/apps/axis2-1.6.2/lib/apache-mime4j-core-0.7.2.jar"/>

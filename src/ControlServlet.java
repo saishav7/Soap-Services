@@ -1,5 +1,6 @@
 
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -33,14 +34,14 @@ public class ControlServlet extends HttpServlet {
 			
 				String eventSetId = request.getParameter("eventSetId");
 				String targetCurrency = request.getParameter("targetCurrency");
-				String outputEventSetId;
 				System.out.println(eventSetId +" " + targetCurrency);
 				String[] params = new String[2];
 				params[0] = eventSetId;
 				params[1] = targetCurrency;
-				outputEventSetId = WebServiceClient.main(params);
-				System.out.println(outputEventSetId);
-				getServletContext().setAttribute("outputEventSetId", outputEventSetId);
+				WebServiceClient.setInputEventSetId(eventSetId);
+				WebServiceClient.setInputTargetCurrency(targetCurrency);
+				WebServiceClient.main(null);
+				getServletContext().setAttribute("outputEventSetId", WebServiceClient.getOutputEventSetId());
 				response.sendRedirect("../SoapServices/home#currency");
 		}
 			else{
