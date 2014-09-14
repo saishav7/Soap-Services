@@ -43,7 +43,17 @@ public class ControlServlet extends HttpServlet {
 				WebServiceClient.main(null);
 				getServletContext().setAttribute("outputEventSetId", WebServiceClient.getOutputEventSetId());
 				response.sendRedirect("../SoapServices/home#currency");
-		}
+		}	else if(request.getParameter("downloadService") != null){
+			
+			String eventSetId = request.getParameter("downloadEventSetId");
+			String[] downloadRequest = new String[2];
+			downloadRequest[0] = "download";
+			downloadRequest[1] = eventSetId;
+			String outputdataSourceURL = ImportDownloadWebServiceClient.main(downloadRequest);
+			System.out.println(outputdataSourceURL);
+			getServletContext().setAttribute("outputDataSourceURL", outputdataSourceURL);
+			response.sendRedirect("../SoapServices/home#import");
+	}
 			else{
 				request.getRequestDispatcher("homepage.jsp").forward(request, response);
 			}

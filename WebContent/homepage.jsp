@@ -269,14 +269,21 @@
 							   	<input type="submit" class="" value="Submit">
 							</form>
 						</div>
-						<div class="clear"> </div>
 						<div class="contact-form">
-						<div class="clear"> </div>
-							<form method="post" action="#">
-								<input type="text" class="textbox" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
+							<h3>OUTPUT </h3>
+							<h3>eventSetId: </h3>
+						</div>
+						<div class="contact-form">
+							<form method="get">
+								<input type="text" class="textbox" name="downloadEventSetId" value="downloadEventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
+							   	<input type="hidden" name="downloadService" value="true">
 							   	<input type="submit" class="" value="Download">
 							</form>
 						</div>
+						<div class="contact-form">
+						<div class="clear"> </div>
+							<h3>OUTPUT </h3>
+							<h3>dataSourceURL: ${outputDataSourceURL}</h3>
 						</div>
 						</div>
 	</div><!-- container -->
@@ -312,6 +319,7 @@
 						<div class="clear"> </div>
 							<form method="post" action="#">
 						    	<input type="text" class="textbox" value="eventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
+							   	<input type="hidden" name="summaryService" value="true">
 							   	<input type="submit" class="" value="Submit">
 							   	<div class="clear"> </div>
 							</form>
@@ -325,6 +333,7 @@
 							<h3 style="color:#fff;">marketType: </h3>
 							<h3 style="color:#fff;">currencyCode: </h3>
 							<h3 style="color:#fff;">fileSize: </h3>
+							
 						</div>
 	</div><!-- container -->
 	<script type="text/javascript" src="js/fliplightbox.min.js"></script>
@@ -373,7 +382,7 @@
 						<div class="contact-form">
 						<div class="clear"> </div>
 							<h3>OUTPUT </h3>
-							<h3>${outputEventSetId}</h3>
+							<h3>eventSetId: ${outputEventSetId}</h3>
 						</div>
 	</div><!-- container -->
 	<script type="text/javascript" src="js/fliplightbox.min.js"></script>
