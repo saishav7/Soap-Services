@@ -161,7 +161,7 @@
 									<td>The earliest timestamp (i.e., the first line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or after (i.e., inclusive) this parameter 
 										and also satisfy the condition for endDate, are included in the output Market Data file</td>
-									<td>2002-04-08T16:59:00.000 (yyyy-MM-ddTHH:mm:ss.SSS)</td>
+									<td>2002-APR-08T16:59:00.000 (yyyy-MMM-ddTHH:mm:ss.SSS)</td>
 								</tr>
 								<tr>
 									<td>endDate</td>
