@@ -343,12 +343,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/apps/apache-tomcat-7.0.42/lib/servlet-api.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/ImportDataClient"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/SummaryDataClient"/>
+	<classpathentry kind="lib" path="/apps/apache-tomcat-7.0.42/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
