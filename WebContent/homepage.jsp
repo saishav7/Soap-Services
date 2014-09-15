@@ -278,7 +278,10 @@
 							<form method="get">
 								<input type="text" class="textbox" name="downloadEventSetId" value="downloadEventSetId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Event Set Id';}">
 							   	<input type="hidden" name="downloadService" value="true">
-							   	<input type="submit" class="" value="Download">
+							   	
+							   	<a href= "${outputDataSourceURL}" target="_blank">
+							   		<input type="submit" class="" value="Download">
+								</a>
 							</form>
 						</div>
 						<div class="contact-form">
