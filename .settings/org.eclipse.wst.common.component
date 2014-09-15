@@ -6,10 +6,10 @@
         <dependent-module archiveName="CurrencyConvertServices-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SoapServices/build/lib/CurrencyConvertServices-test-client.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ImportDownloadServices-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ImportDataClient/build/lib/ImportDownloadServices-test-client.jar">
+        <dependent-module archiveName="SummaryMarketDataService-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SummaryDataClient/build/lib/SummaryMarketDataService-test-client.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="SummaryMarketDataService-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/SummaryDataClient/build/lib/SummaryMarketDataService-test-client.jar">
+        <dependent-module archiveName="ImportDownloadServices-test-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ImportDataClient/build/lib/ImportDownloadServices-test-client.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="SoapServices"/>

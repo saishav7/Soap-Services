@@ -253,7 +253,7 @@
 						filtering the data file using four parameters namely <b>sec</b>, <b>startDate</b>, 
 						<b>endDate</b> and <b>dataSourceURL</b>. On clicking submit, the output file will be created
 						and an <b>eventSetId</b> will be generated, which is essentially a reference to the required file.
-						The file call be downloaded by clicking on the download button.
+						The download service generates a link to the required output data file.
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
