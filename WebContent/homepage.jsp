@@ -169,7 +169,7 @@
 									<td>The latest timestamp (i.e., the last line) in the Market Data file associated with the eventSetID. 
 										Rows that have a timestamp on or before (i.e., inclusive) this parameter and also satisfy the 
 										condition for startDate, are included in the output Market Data file</td>
-									<td>2002-04-09T17:48:00.000 (yyyy-MM-ddTHH:mm:ss.SSS)</td>
+									<td>2002-APR-09T17:48:00.000 (yyyy-MMM-ddTHH:mm:ss.SSS)</td>
 								</tr>
 								<tr>
 									<td>dataSource</td>
@@ -257,7 +257,7 @@
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p><a href="http://localhost:8080/axis2/services/ImportDownloadServices?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p><a href="http://hvee350.srvr:8080/axis2/services/ImportDownloadServices?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<p><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 							<div class="clear"> </div>
@@ -314,7 +314,7 @@
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p style="color:#fff;"><a href="http://localhost:8080/axis2/services/SummaryMarketDataService?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p style="color:#fff;"><a href="http://hvee350.srvr:8080/axis2/services/SummaryMarketDataService?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<p style="color:#fff;"><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 						<div class="clear"> </div>
@@ -368,7 +368,7 @@
 						</p>
 						<div id="portfoliolist">
 						<div class="portfolio-wrapper">	
-						<p><a href="http://localhost:8080/axis2/services/CurrencyConvertServices?wsdl" target="_blank">LINK TO WSDL</a></p>
+						<p><a href="http://hvee350.srvr:8080/axis2/services/CurrencyConvertServices?wsdl" target="_blank">LINK TO WSDL</a></p>
 						<p><a class="popup-with-zoom-anim" href="#paramsInfo">Click here</a> for more details about the parameters used.</p>
 						<p><a class="popup-with-zoom-anim" href="#errorCodes">Error Codes</a></p>
 						<div class="clear"> </div>
