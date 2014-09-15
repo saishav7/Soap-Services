@@ -31,47 +31,53 @@ public class ControlServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		String eventSetId;
+		String eventSetIdD;
+		String targetCurrency;
+		String[] downloadRequest;
+		String[] importRequest;
+		String[] summaryRequest;
 		if(request.getParameter("currencyService") != null){
 			
-				String eventSetId = request.getParameter("eventSetId");
-				String targetCurrency = request.getParameter("targetCurrency");
-				System.out.println(eventSetId +" " + targetCurrency);
-				String[] params = new String[2];
-				params[0] = eventSetId;
-				params[1] = targetCurrency;
-				WebServiceClient.setInputEventSetId(eventSetId);
-				WebServiceClient.setInputTargetCurrency(targetCurrency);
-				WebServiceClient.main(null);
-				getServletContext().setAttribute("outputEventSetId", WebServiceClient.getOutputEventSetId());
-				response.sendRedirect("../SoapServices/home#currency");
+			eventSetId = request.getParameter("eventSetId");
+			targetCurrency = request.getParameter("targetCurrency");
+			System.out.println(eventSetId +" " + targetCurrency);
+			String[] params = new String[2];
+			params[0] = eventSetId;
+			params[1] = targetCurrency;
+			WebServiceClient.setInputEventSetId(eventSetId);
+			WebServiceClient.setInputTargetCurrency(targetCurrency);
+			WebServiceClient.main(null);
+			getServletContext().setAttribute("outputEventSetId", WebServiceClient.getOutputEventSetId());
+			response.sendRedirect("../SoapServices/home#currency");
+			
 		}	else if(request.getParameter("downloadService") != null){
 			
-			String eventSetId = request.getParameter("downloadEventSetId");
-			String[] downloadRequest = new String[2];
+			eventSetIdD = request.getParameter("downloadEventSetId");
+			downloadRequest = new String[2];
 			downloadRequest[0] = "download";
-			downloadRequest[1] = eventSetId;
+			downloadRequest[1] = eventSetIdD;
 			String outputdataSourceURL = ImportDownloadWebServiceClient.main(downloadRequest);
 			System.out.println(outputdataSourceURL);
 			getServletContext().setAttribute("outputDataSourceURL", outputdataSourceURL);
 			response.sendRedirect("../SoapServices/home#import");
 			
 		}	else if(request.getParameter("importService") != null){
-			String[] downloadRequest = new String[5];
-			downloadRequest[0] = "import";
-			downloadRequest[1] = request.getParameter("sec");
-			downloadRequest[2] = request.getParameter("startDate");
-			downloadRequest[3] = request.getParameter("endDate");
-			downloadRequest[4] = request.getParameter("dataSourceURL");
+			importRequest = new String[5];
+			importRequest[0] = "import";
+			importRequest[1] = request.getParameter("sec");
+			importRequest[2] = request.getParameter("startDate");
+			importRequest[3] = request.getParameter("endDate");
+			importRequest[4] = request.getParameter("dataSourceURL");
 			
-			String outputImportEventSetId = ImportDownloadWebServiceClient.main(downloadRequest);
+			String outputImportEventSetId = ImportDownloadWebServiceClient.main(importRequest);
 			getServletContext().setAttribute("outputImportEventSetId", outputImportEventSetId);
 			response.sendRedirect("../SoapServices/home#import");
 			
 		}	else if(request.getParameter("summaryService") != null){
-			String[] downloadRequest = new String[1];
-			downloadRequest[0] = request.getParameter("summaryEventSetId");
-			SummaryMarketDataResponse res = SummaryDataWebServiceClient.main(downloadRequest);
+			summaryRequest = new String[1];
+			summaryRequest[0] = request.getParameter("summaryEventSetId");
+			SummaryMarketDataResponse res = SummaryDataWebServiceClient.main(summaryRequest);
 			getServletContext().setAttribute("outputSummaryEventSetId", res.getEventSetId());
 			getServletContext().setAttribute("outputSummaryStartDate", res.getStartDate());
 			getServletContext().setAttribute("outputSummaryEndDate", res.getEndDate());
