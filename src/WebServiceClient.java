@@ -23,7 +23,7 @@ public class WebServiceClient {
 	private static String inputTargetCurrency;
 	private static String outputEventSetId;
     public static void main(String[] args) {
-        String wsURL = "http://hvee350.srvr:8080/axis2/services/CurrencyConvertServices";
+        String wsURL = "http://localhost:8080/axis2/services/CurrencyConvertServices";
         try {
             CurrencyConvertServicesStub stub = new CurrencyConvertServicesStub(wsURL);
             outputEventSetId = callCurrencyConvertMarketDataOperation(stub,inputEventSetId,inputTargetCurrency);
